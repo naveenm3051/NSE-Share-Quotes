@@ -18,8 +18,6 @@ chrome_options = Options()
 #chrome_options.add_argument('--no-sandbox')
 #chrome_options.add_argument('--disable-dev-shm-usage')
 
-#bot_token = ODg2ODkwNjc0NzA2ODcwMjky.YT8LTg.b_fNDr2sybP9CBs_ZR0bltgPqVk
-#url = https://discord.com/api/oauth2/authorize?client_id=886890674706870292&permissions=534723951680&scope=bot
 # yahoo finace site url-->https://finance.yahoo.com/
 #share price x path -->//*[@id="quote-header-info"]/div[3]/div[1]/div/span[1]
 client = discord.Client()
@@ -27,15 +25,15 @@ client = discord.Client()
 @client.event
 async def on_ready():
  print('We have logged in as {0.user}'.format(client))
- general_channel = client.get_channel(886889808843141154)
+ general_channel = client.get_channel(Enter your channel ID here)
  await general_channel.send("Hello Guys!")
 
 #, options = chrome_options
 option = webdriver.ChromeOptions()
-#option.add_argument("--headless")
-#options=chrome_options
+option.add_argument("--headless")
+
 #driver = webdriver.Chrome()
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options)
 wait = WebDriverWait(driver,10)   
 
 #def alert():
